@@ -212,6 +212,9 @@
                                             <constraint firstAttribute="height" constant="150" id="Fw3-g5-h7J"/>
                                         </constraints>
                                         <state key="normal" title="YES"/>
+                                        <connections>
+                                            <action selector="onYesButtonPressed:" destination="wNE-fw-fdC" eventType="touchUpInside" id="rOa-lI-60J"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nN-F4-E97">
                                         <rect key="frame" x="0.0" y="150" width="568" height="50"/>
@@ -220,6 +223,9 @@
                                             <constraint firstAttribute="height" constant="50" id="Ta3-f4-iCG"/>
                                         </constraints>
                                         <state key="normal" title="NO"/>
+                                        <connections>
+                                            <action selector="onNoButtonPressed:" destination="wNE-fw-fdC" eventType="touchUpInside" id="PEY-vy-Hof"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -246,7 +252,18 @@
                             <constraint firstItem="oZg-Wv-8TS" firstAttribute="top" secondItem="17Z-Q4-3Ug" secondAttribute="bottom" constant="32" id="nLx-Xv-XbU"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Assessment" id="3lR-pQ-imK"/>
+                    <navigationItem key="navigationItem" title="Assessment" id="3lR-pQ-imK">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="EHC-PO-vke">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GzB-Ly-KHT">
+                                <rect key="frame" x="447" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="questionLabel" destination="oZg-Wv-8TS" id="dXm-CW-fT1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skq-Nd-iv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

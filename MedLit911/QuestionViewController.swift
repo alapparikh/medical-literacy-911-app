@@ -10,4 +10,20 @@ import UIKit
 
 class QuestionViewController: UIViewController {
 
+    @IBOutlet weak var questionLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Set initial question : Jon
+    }
+    
+    @IBAction func onYesButtonPressed(sender: AnyObject) {
+        // Go to next view controller : ALAP
+    }
+    
+    @IBAction func onNoButtonPressed(sender: AnyObject) {
+        // Go to next question : Jon
+        questionLabel.text = "Hello idiots"
+    }
 }
