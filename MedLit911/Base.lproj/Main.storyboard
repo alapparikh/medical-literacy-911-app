@@ -60,6 +60,13 @@
                                     <action selector="onDoneButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BuC-VY-IhR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Before your first emergency, please record your contact information which will be automatically forwarded to the authorities." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3Z-Yv-iEk">
+                                <rect key="frame" x="-156" y="43" width="947" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -388,7 +395,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HgT-7v-EAc" userLabel="User Location View">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HgT-7v-EAc" userLabel="User Location View">
                                 <rect key="frame" x="8" y="64" width="584" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Location: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sux-Ob-a5a" userLabel="Current Location Label">
@@ -418,10 +425,10 @@
                                     <constraint firstItem="a67-bR-uRH" firstAttribute="top" secondItem="HgT-7v-EAc" secondAttribute="top" id="nRc-2b-o1J"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LSb-1t-KG2" userLabel="Map View">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LSb-1t-KG2" userLabel="Map View">
                                 <rect key="frame" x="0.0" y="112" width="600" height="488"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pXM-cR-Ngt">
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pXM-cR-Ngt">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="488"/>
                                         <animations/>
                                     </mapView>
