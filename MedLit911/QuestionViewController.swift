@@ -32,12 +32,15 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func onYesButtonPressed(sender: AnyObject) {
-        // Go to next view controller : ALAP
+        // Go to next view controller
+        performSegueWithIdentifier("showConnectingScreen", sender: nil)
     }
     
     @IBAction func onNoButtonPressed(sender: AnyObject) {
         if nextQuestion == questionList.count {
             // Go to don't know view controller
+            performSegueWithIdentifier("showUnsureScreen", sender: nil)
+            
         } else {
             questionLabel.text = questionList[nextQuestion++]
         }

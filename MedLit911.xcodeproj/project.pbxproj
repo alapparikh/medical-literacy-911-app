@@ -17,6 +17,8 @@
 		E60B4D551C03EC0100504754 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B4D541C03EC0100504754 /* HomeViewController.swift */; };
 		E60B4D571C03EFEE00504754 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B4D561C03EFEE00504754 /* QuestionViewController.swift */; };
 		E6DF75351C110CAA00D6078A /* ConnectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF75341C110CAA00D6078A /* ConnectingViewController.swift */; };
+		E6DF75371C11135300D6078A /* AmbulanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF75361C11135300D6078A /* AmbulanceViewController.swift */; };
+		E6DF75391C114E8000D6078A /* UnsureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF75381C114E8000D6078A /* UnsureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E60B4D541C03EC0100504754 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E60B4D561C03EFEE00504754 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		E6DF75341C110CAA00D6078A /* ConnectingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectingViewController.swift; sourceTree = "<group>"; };
+		E6DF75361C11135300D6078A /* AmbulanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbulanceViewController.swift; sourceTree = "<group>"; };
+		E6DF75381C114E8000D6078A /* UnsureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsureViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				E60B4D541C03EC0100504754 /* HomeViewController.swift */,
 				E60B4D561C03EFEE00504754 /* QuestionViewController.swift */,
 				E6DF75341C110CAA00D6078A /* ConnectingViewController.swift */,
+				E6DF75361C11135300D6078A /* AmbulanceViewController.swift */,
+				E6DF75381C114E8000D6078A /* UnsureViewController.swift */,
 			);
 			path = MedLit911;
 			sourceTree = "<group>";
@@ -265,9 +271,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6DF75391C114E8000D6078A /* UnsureViewController.swift in Sources */,
 				E60B4D271C03E8A200504754 /* RegisterViewController.swift in Sources */,
 				E60B4D251C03E8A200504754 /* AppDelegate.swift in Sources */,
 				E60B4D571C03EFEE00504754 /* QuestionViewController.swift in Sources */,
+				E6DF75371C11135300D6078A /* AmbulanceViewController.swift in Sources */,
 				E60B4D551C03EC0100504754 /* HomeViewController.swift in Sources */,
 				E6DF75351C110CAA00D6078A /* ConnectingViewController.swift in Sources */,
 			);

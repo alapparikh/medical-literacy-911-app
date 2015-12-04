@@ -8,13 +8,22 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstNameField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+                // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    @IBAction func onDoneButtonPressed(sender: AnyObject) {
+        
+        performSegueWithIdentifier("showHomeScreen", sender: nil)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,9 +10,22 @@ import UIKit
 
 class ConnectingViewController: UIViewController {
     
+    var count = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countUp", userInfo: nil, repeats: true)    }
+        var timer = NSTimer()
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countUp", userInfo: nil, repeats: true)
+    }
+    
+    func countUp() {
+        
+        count += 1
+        if (count == 10) {
+            // Perform segue to 'help is on the way' screen
+            performSegueWithIdentifier("showAmbulanceScreen", sender: nil)
+        }
+    }
 
 }
