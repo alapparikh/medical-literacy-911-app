@@ -13,7 +13,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var questionLabel: UILabel!
     
     var questionList = [
-        "Is the patient responsive to touch or speech?",
+        "Is the patient unresponsive to touch or speech?",
         "Is the patient having discomfort in the center of the chest (>a few minutes or intermittent)? (uncomfortable pressure, squeezing, fullness or pain.)",
         "Is the patient having trouble breathing or irregularly gasping for air?",
         "Does one side of the patient's face droop or is it numb? (Ask the person to smile.)",
