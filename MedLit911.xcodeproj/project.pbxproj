@@ -16,6 +16,7 @@
 		E60B4D451C03E8A300504754 /* MedLit911UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B4D441C03E8A300504754 /* MedLit911UITests.swift */; };
 		E60B4D551C03EC0100504754 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B4D541C03EC0100504754 /* HomeViewController.swift */; };
 		E60B4D571C03EFEE00504754 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60B4D561C03EFEE00504754 /* QuestionViewController.swift */; };
+		E6DF75351C110CAA00D6078A /* ConnectingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF75341C110CAA00D6078A /* ConnectingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E60B4D461C03E8A300504754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E60B4D541C03EC0100504754 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E60B4D561C03EFEE00504754 /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		E6DF75341C110CAA00D6078A /* ConnectingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				E60B4D301C03E8A300504754 /* Info.plist */,
 				E60B4D541C03EC0100504754 /* HomeViewController.swift */,
 				E60B4D561C03EFEE00504754 /* QuestionViewController.swift */,
+				E6DF75341C110CAA00D6078A /* ConnectingViewController.swift */,
 			);
 			path = MedLit911;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				E60B4D251C03E8A200504754 /* AppDelegate.swift in Sources */,
 				E60B4D571C03EFEE00504754 /* QuestionViewController.swift in Sources */,
 				E60B4D551C03EC0100504754 /* HomeViewController.swift in Sources */,
+				E6DF75351C110CAA00D6078A /* ConnectingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +494,7 @@
 				E60B4D4B1C03E8A300504754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E60B4D4C1C03E8A300504754 /* Build configuration list for PBXNativeTarget "MedLit911Tests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +503,7 @@
 				E60B4D4E1C03E8A300504754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E60B4D4F1C03E8A300504754 /* Build configuration list for PBXNativeTarget "MedLit911UITests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +512,7 @@
 				E60B4D511C03E8A300504754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
