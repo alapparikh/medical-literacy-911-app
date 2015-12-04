@@ -19,7 +19,6 @@ class QuestionViewController: UIViewController {
         "Does one side of the patient's face droop or is it numb? (Ask the person to smile.)",
         "Is one of the patient's arm weak or numb? Does one arm drift downward when the person raises both arms?",
         "Is the patient's speech slurred -- are they unable to speak or hard to understand?",
-        "Is the patient having trouble breathing or is irregularly gasping for air?",
         "Is the patient unconscious?"
     ]
     
