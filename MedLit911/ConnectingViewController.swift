@@ -10,6 +10,7 @@ import UIKit
 
 class ConnectingViewController: UIViewController {
     
+    @IBOutlet weak var dotsLabel: UILabel!
     var count = 0
     
     override func viewDidLoad() {
@@ -26,6 +27,12 @@ class ConnectingViewController: UIViewController {
             // Perform segue to 'help is on the way' screen
             performSegueWithIdentifier("showAmbulanceScreen", sender: nil)
         }
+        
+        var text = ""
+        for var i=0; i<(count%3); i++ {
+            text += "."
+        }
+        dotsLabel.text = text
     }
 
 }

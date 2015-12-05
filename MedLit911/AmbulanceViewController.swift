@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class AmbulanceViewController: UIViewController, UIPickerViewDelegate {
+class AmbulanceViewController: UIViewController, UIPickerViewDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var ambulanceMapView: MKMapView!
     let regionRadius: CLLocationDistance = 1000
@@ -25,7 +25,26 @@ class AmbulanceViewController: UIViewController, UIPickerViewDelegate {
         let initialLocation = CLLocation(latitude: 40.7127, longitude: -74.0059)
         centerMapOnLocation(initialLocation)
         
-        addAnnotation()
+        // Annotation settings
+        let userLocation = CustomPointAnnotation()
+        userLocation.coordinate = CLLocationCoordinate2DMake(40.7137, -74.0059)
+        userLocation.title = "Your Location"
+        userLocation.subtitle = "Your current estimated location"
+        userLocation.imageName = "1.png"
+        
+        let ambulanceLocation = CustomPointAnnotation()
+        ambulanceLocation.coordinate = CLLocationCoordinate2DMake(40.7147, -74.0059)
+        ambulanceLocation.title = "Ambulance location"
+        ambulanceLocation.subtitle = "Last known ambulance location"
+        ambulanceLocation.imageName = "2.png"
+        
+        let hospitalLocation = CustomPointAnnotation()
+        hospitalLocation.coordinate = CLLocationCoordinate2DMake(40.7117, -74.0059)
+        hospitalLocation.title = "Hospital location"
+        hospitalLocation.subtitle = "Closest hospital location"
+        hospitalLocation.imageName = "2.png"
+        
+        
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -50,5 +69,31 @@ class AmbulanceViewController: UIViewController, UIPickerViewDelegate {
         annotation.title = "The Location"
         annotation.subtitle = "This is the location !!!"
         ambulanceMapView.addAnnotation(annotation)
+    }
+    
+    // MapView Delegate
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        if !(annotation is CustomPointAnnotation) {
+            return nil
+        }
+        
+        let reuseId = "test"
+        
+        var anView = mapView.dequeueReusableAnnotationViewWithIdentifier(reuseId)
+        if anView == nil {
+            anView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            anView!.canShowCallout = true
+        }
+        else {
+            anView!.annotation = annotation
+        }
+        
+        //Set annotation-specific properties **AFTER**
+        //the view is dequeued or created...
+        
+        let cpa = annotation as! CustomPointAnnotation
+        anView!.image = UIImage(named:cpa.imageName)
+        
+        return anView
     }
 }
