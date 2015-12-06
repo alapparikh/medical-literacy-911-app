@@ -11,8 +11,12 @@ import UIKit
 class QuestionViewController: UIViewController {
 
     @IBOutlet weak var questionLabel: UILabel!
+    @IBOutlet weak var noButton: UIButton!
+    @IBOutlet weak var yesButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     var questionList = [
+    
         "Is the patient unresponsive to touch or speech?",
         "Is the patient having discomfort in the center of the chest (>a few minutes or intermittent)? (uncomfortable pressure, squeezing, fullness or pain.)",
         "Is the patient having trouble breathing or irregularly gasping for air?",
@@ -22,17 +26,40 @@ class QuestionViewController: UIViewController {
         "Is the patient unconscious?"
     ]
     
+    var imageList = [
+        "unresponsive",
+        "chest-pain",
+        "trouble-breathing",
+        "droop",
+        "arm-drift",
+        "speech",
+        "unconscious"
+    ]
+    
     var nextQuestion = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        questionLabel.text = questionList[nextQuestion++]
+        noButton.layer.borderWidth = 1
+        noButton.layer.borderColor = UIColor.grayColor().CGColor
+        questionLabel.text = questionList[nextQuestion]
+        imageView.image = UIImage(named: imageList[nextQuestion])
+        nextQuestion++
+        
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: "longPressed:")
+        longPressRecognizer.minimumPressDuration = 2.0
+        longPressRecognizer.allowableMovement = 50.0
+        yesButton.addGestureRecognizer(longPressRecognizer)
     }
     
-    @IBAction func onYesButtonPressed(sender: AnyObject) {
-        // Go to next view controller
-        performSegueWithIdentifier("showConnectingScreen", sender: nil)
+    func longPressed(sender: UILongPressGestureRecognizer)
+    {
+        if (sender.state == UIGestureRecognizerState.Began) {
+            print ("Show Connecting Screen")
+            performSegueWithIdentifier("showConnectingScreen", sender: nil)
+        }
+
     }
     
     @IBAction func onNoButtonPressed(sender: AnyObject) {
@@ -41,7 +68,9 @@ class QuestionViewController: UIViewController {
             performSegueWithIdentifier("showUnsureScreen", sender: nil)
             
         } else {
-            questionLabel.text = questionList[nextQuestion++]
+            questionLabel.text = questionList[nextQuestion]
+            imageView.image = UIImage(named: imageList[nextQuestion])
+            nextQuestion++
         }
     }
 }

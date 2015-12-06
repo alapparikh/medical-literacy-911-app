@@ -12,11 +12,12 @@ class ConnectingViewController: UIViewController {
     
     @IBOutlet weak var dotsLabel: UILabel!
     var count = 0
+    var timer = NSTimer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var timer = NSTimer()
+        //var timer = NSTimer()
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countUp", userInfo: nil, repeats: true)
     }
     
@@ -24,12 +25,13 @@ class ConnectingViewController: UIViewController {
         
         count += 1
         if (count == 10) {
+            timer.invalidate()
             // Perform segue to 'help is on the way' screen
             performSegueWithIdentifier("showAmbulanceScreen", sender: nil)
         }
         
         var text = ""
-        for var i=0; i<(count%3); i++ {
+        for var i=0; i<((count%3)+1); i++ {
             text += "."
         }
         dotsLabel.text = text

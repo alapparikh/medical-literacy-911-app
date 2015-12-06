@@ -20,6 +20,7 @@
 		E6DF75371C11135300D6078A /* AmbulanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF75361C11135300D6078A /* AmbulanceViewController.swift */; };
 		E6DF75391C114E8000D6078A /* UnsureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF75381C114E8000D6078A /* UnsureViewController.swift */; };
 		E6DF753C1C1222A000D6078A /* CustomPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF753B1C1222A000D6078A /* CustomPointAnnotation.swift */; };
+		E6DF75401C13E9BC00D6078A /* PickLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6DF753F1C13E9BC00D6078A /* PickLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		E6DF75361C11135300D6078A /* AmbulanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AmbulanceViewController.swift; sourceTree = "<group>"; };
 		E6DF75381C114E8000D6078A /* UnsureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnsureViewController.swift; sourceTree = "<group>"; };
 		E6DF753B1C1222A000D6078A /* CustomPointAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotation.swift; sourceTree = "<group>"; };
+		E6DF753F1C13E9BC00D6078A /* PickLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				E6DF75341C110CAA00D6078A /* ConnectingViewController.swift */,
 				E6DF75361C11135300D6078A /* AmbulanceViewController.swift */,
 				E6DF75381C114E8000D6078A /* UnsureViewController.swift */,
+				E6DF753F1C13E9BC00D6078A /* PickLocationViewController.swift */,
 			);
 			path = MedLit911;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				E6DF75371C11135300D6078A /* AmbulanceViewController.swift in Sources */,
 				E60B4D551C03EC0100504754 /* HomeViewController.swift in Sources */,
 				E6DF753C1C1222A000D6078A /* CustomPointAnnotation.swift in Sources */,
+				E6DF75401C13E9BC00D6078A /* PickLocationViewController.swift in Sources */,
 				E6DF75351C110CAA00D6078A /* ConnectingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

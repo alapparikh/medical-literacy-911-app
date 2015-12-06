@@ -9,42 +9,49 @@
 import UIKit
 import MapKit
 
-class AmbulanceViewController: UIViewController, UIPickerViewDelegate, MKMapViewDelegate {
+class AmbulanceViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var ambulanceMapView: MKMapView!
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 1500
     let locationSuggestions = [
         "Starbucks",
         "Empire State Building"
     ]
+    var annotationArray = [CustomPointAnnotation]()
+    let userLocation = CustomPointAnnotation()
+    let ambulanceLocation = CustomPointAnnotation()
+    let hospitalLocation = CustomPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // MapKit settings
-        let initialLocation = CLLocation(latitude: 40.7127, longitude: -74.0059)
+        ambulanceMapView.delegate = self
+        let initialLocation = CLLocation(latitude: 40.756581, longitude: -73.967662)
         centerMapOnLocation(initialLocation)
         
         // Annotation settings
-        let userLocation = CustomPointAnnotation()
-        userLocation.coordinate = CLLocationCoordinate2DMake(40.7137, -74.0059)
+        
+        userLocation.coordinate = CLLocationCoordinate2DMake(40.756581, -73.967662)
         userLocation.title = "Your Location"
         userLocation.subtitle = "Your current estimated location"
-        userLocation.imageName = "1.png"
+        userLocation.imageName = "marker"
         
-        let ambulanceLocation = CustomPointAnnotation()
-        ambulanceLocation.coordinate = CLLocationCoordinate2DMake(40.7147, -74.0059)
+        ambulanceLocation.coordinate = CLLocationCoordinate2DMake(40.764870, -73.961289)
         ambulanceLocation.title = "Ambulance location"
         ambulanceLocation.subtitle = "Last known ambulance location"
-        ambulanceLocation.imageName = "2.png"
+        ambulanceLocation.imageName = "car"
         
-        let hospitalLocation = CustomPointAnnotation()
-        hospitalLocation.coordinate = CLLocationCoordinate2DMake(40.7117, -74.0059)
+        hospitalLocation.coordinate = CLLocationCoordinate2DMake(40.764639, -73.954853)
         hospitalLocation.title = "Hospital location"
         hospitalLocation.subtitle = "Closest hospital location"
-        hospitalLocation.imageName = "2.png"
+        hospitalLocation.imageName = "hospital"
         
+        annotationArray.append(hospitalLocation)
+        annotationArray.append(ambulanceLocation)
+        annotationArray.append(userLocation)
         
+        ambulanceMapView.addAnnotations(annotationArray)
     }
     
     func centerMapOnLocation(location: CLLocation) {
@@ -53,26 +60,8 @@ class AmbulanceViewController: UIViewController, UIPickerViewDelegate, MKMapView
         ambulanceMapView.setRegion(coordinateRegion, animated: true)
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
-    {
-        return locationSuggestions[row]
-    }
-    
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
-    {
-        // TODO: Change user location pin to new location (defined by selection)
-    }
-    
-    func addAnnotation () {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(40.7127, -74.0059)
-        annotation.title = "The Location"
-        annotation.subtitle = "This is the location !!!"
-        ambulanceMapView.addAnnotation(annotation)
-    }
-    
     // MapView Delegate
-    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if !(annotation is CustomPointAnnotation) {
             return nil
         }
@@ -92,8 +81,25 @@ class AmbulanceViewController: UIViewController, UIPickerViewDelegate, MKMapView
         //the view is dequeued or created...
         
         let cpa = annotation as! CustomPointAnnotation
-        anView!.image = UIImage(named:cpa.imageName)
+        print(cpa.title)
+
+        let imageView = UIImageView(frame: CGRectMake(0, 0, 40, 40))
+        imageView.image = UIImage(named: cpa.imageName);
+        //imageView.layer.cornerRadius = imageView.layer.frame.size.width / 2
+        imageView.layer.masksToBounds = true
+        anView!.addSubview(imageView)
         
         return anView
+    }
+    
+    // Select different location
+     @IBAction func onEditLocationButtonPressed(sender: AnyObject) {
+        
+        // TODO: focus map on preselected location
+        let walgreensLocation = CLLocation(latitude: 40.756448, longitude: -73.967107)
+        centerMapOnLocation(walgreensLocation)
+        userLocation.coordinate = CLLocationCoordinate2DMake(40.756448, -73.967107)
+        
+        performSegueWithIdentifier("pickLocationSegue", sender: nil)
     }
 }
