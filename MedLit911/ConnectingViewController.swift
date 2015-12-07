@@ -17,7 +17,6 @@ class ConnectingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //var timer = NSTimer()
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "countUp", userInfo: nil, repeats: true)
     }
     
@@ -30,8 +29,9 @@ class ConnectingViewController: UIViewController {
             performSegueWithIdentifier("showAmbulanceScreen", sender: nil)
         }
         
+        // Animate dots
         var text = ""
-        for var i=0; i<((count%3)+1); i++ {
+        for var i=0; i<(count%3)+1; i++ {
             text += "."
         }
         dotsLabel.text = text

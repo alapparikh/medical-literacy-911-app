@@ -14,6 +14,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var noButton: UIButton!
     @IBOutlet weak var yesButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var dialButton: UIButton!
     
     var questionList = [
     
@@ -43,6 +44,9 @@ class QuestionViewController: UIViewController {
         
         noButton.layer.borderWidth = 1
         noButton.layer.borderColor = UIColor.grayColor().CGColor
+        dialButton.layer.borderWidth = 1
+        dialButton.layer.borderColor = UIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1.0).CGColor
+        
         questionLabel.text = questionList[nextQuestion]
         imageView.image = UIImage(named: imageList[nextQuestion])
         nextQuestion++
@@ -60,6 +64,10 @@ class QuestionViewController: UIViewController {
             performSegueWithIdentifier("showConnectingScreen", sender: nil)
         }
 
+    }
+    
+    @IBAction func onDialButtonPressed(sender: AnyObject) {
+        performSegueWithIdentifier("showConnectingScreen", sender: nil)
     }
     
     @IBAction func onNoButtonPressed(sender: AnyObject) {

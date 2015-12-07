@@ -95,7 +95,7 @@ class AmbulanceViewController: UIViewController, MKMapViewDelegate {
     // Select different location
      @IBAction func onEditLocationButtonPressed(sender: AnyObject) {
         
-        // TODO: focus map on preselected location
+        // focus map on preselected location
         let walgreensLocation = CLLocation(latitude: 40.756448, longitude: -73.967107)
         centerMapOnLocation(walgreensLocation)
         userLocation.coordinate = CLLocationCoordinate2DMake(40.756448, -73.967107)
