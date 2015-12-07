@@ -619,9 +619,9 @@
                                 <rect key="frame" x="8" y="64" width="584" height="48"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MM7-xQ-XLz">
-                                        <rect key="frame" x="247.5" y="9" width="89" height="30"/>
+                                        <rect key="frame" x="162" y="9" width="259" height="30"/>
                                         <animations/>
-                                        <state key="normal" title="Edit Location"/>
+                                        <state key="normal" title="Choose Nearby Landmark or Location"/>
                                         <connections>
                                             <action selector="onEditLocationButtonPressed:" destination="UcP-kO-qHP" eventType="touchUpInside" id="H2J-Sh-Q65"/>
                                         </connections>
@@ -642,15 +642,35 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="488"/>
                                         <animations/>
                                     </mapView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location: 993 2nd Avenue" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ8-Ef-Vbv">
+                                        <rect key="frame" x="0.0" y="464" width="600" height="24"/>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="Z2h-Xy-rDw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="PJ8-Ef-Vbv" secondAttribute="bottom" id="3GK-RR-pB2"/>
                                     <constraint firstItem="pXM-cR-Ngt" firstAttribute="top" secondItem="LSb-1t-KG2" secondAttribute="top" id="8Y7-k2-ayf"/>
                                     <constraint firstAttribute="bottom" secondItem="pXM-cR-Ngt" secondAttribute="bottom" id="H3t-UY-kPh"/>
                                     <constraint firstItem="pXM-cR-Ngt" firstAttribute="leading" secondItem="LSb-1t-KG2" secondAttribute="leading" id="NhB-9J-hbC"/>
+                                    <constraint firstItem="PJ8-Ef-Vbv" firstAttribute="leading" secondItem="LSb-1t-KG2" secondAttribute="leading" id="VMf-vf-BUN"/>
                                     <constraint firstAttribute="trailing" secondItem="pXM-cR-Ngt" secondAttribute="trailing" id="WRI-CL-a9W"/>
+                                    <constraint firstAttribute="trailing" secondItem="PJ8-Ef-Vbv" secondAttribute="trailing" id="c5e-V2-eM0"/>
+                                    <constraint firstItem="PJ8-Ef-Vbv" firstAttribute="centerX" secondItem="LSb-1t-KG2" secondAttribute="centerX" id="qkB-vb-Pdv"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qkB-vb-Pdv"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <animations/>
